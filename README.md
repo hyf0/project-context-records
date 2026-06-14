@@ -19,7 +19,8 @@ wherever you keep the records):
 
 This project keeps its durable design context as **Project Context Records** —
 methodology: https://github.com/hyf0/project-context-records. Records live in
-`.agents/docs/`, one concept per file, cross-linked with `[[wiki-links]]`.
+`.agents/docs/`, one concept per file, cross-linked with relative Markdown links
+(`[name](./name.md)`).
 
 When working here:
 - **Read first.** If a record covers the area you're touching, read it before acting.
@@ -44,6 +45,7 @@ whenever a human reviews.
 
 ## Contents
 
+- [The premise: output is bounded by context](#the-premise-output-is-bounded-by-context)
 - [Why code is no longer enough](#why-code-is-no-longer-enough)
 - [Where it sits](#where-it-sits)
 - [Old tree, new shoots](#old-tree-new-shoots)
@@ -52,6 +54,31 @@ whenever a human reviews.
 - [Lifecycle: accumulate → distill](#lifecycle-accumulate--distill)
 - [Writing conventions](#writing-conventions)
 - [Deliberately deferred](#deliberately-deferred)
+
+---
+
+## The premise: output is bounded by context
+
+An LLM's output is a function of its context. Whatever it produces — a plan, an
+edit, a judgment — is bounded by what it can see. Give it the relevant context and
+the result moves toward what the project actually wants; starve it and it fills the
+gap with generic assumptions and confident guesses. **That gap is exactly where
+wrong-but-plausible work is born.** This is not a tuning detail; it is the
+operating principle of the whole class of systems.
+
+More context is not free: too much dilutes attention, buries the signal in noise,
+and costs tokens — curating it is real work. But the **asymmetry** is the point.
+*Too little* context is reliably, predictably bad: a capable model reasoning
+without the deciding information still produces wrong work, because its ceiling is
+set by what's in front of it and no amount of raw capability rescues you below that
+floor. "More context, carefully chosen" has trade-offs; "missing the context that
+decides the answer" has none — it just loses.
+
+This asymmetry is why PCR has two halves, not one. Because *too little* is bad, you
+**accumulate** the judgment that would otherwise evaporate. Because *too much or
+stale* is also bad, you **distill** — pruning noise, keeping the current truth
+fresh. PCR aims at the sweet spot: the high-value, least-recoverable context,
+present and trustworthy, with nothing rotting around it.
 
 ---
 
@@ -193,8 +220,9 @@ let real use pull more, if it ever does. Don't pre-fill the cabinet.
 
 ## Writing conventions
 
-- **One concept per file.** Cross-link related entries with `[[wiki-style]]`
-  links.
+- **One concept per file.** Cross-link related entries with standard relative
+  Markdown links (`[other-concept](./other-concept.md)`) — clickable on GitHub,
+  unambiguous, and tool-agnostic.
 - **Keep the current truth fresh.** Drift is the death risk: a confident record
   that no longer matches reality flips from asset to **trap** — an agent will act
   on it with full confidence. A stale record is worse than no record. When your
