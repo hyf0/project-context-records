@@ -59,26 +59,18 @@ whenever a human reviews.
 
 ## The premise: output is bounded by context
 
-An LLM's output is a function of its context. Whatever it produces — a plan, an
-edit, a judgment — is bounded by what it can see. Give it the relevant context and
-the result moves toward what the project actually wants; starve it and it fills the
-gap with generic assumptions and confident guesses. **That gap is exactly where
-wrong-but-plausible work is born.** This is not a tuning detail; it is the
-operating principle of the whole class of systems.
+An LLM's output is a function of its context. Give it the context that decides the
+answer and the result moves toward what the project wants; starve it and it fills
+the gap with confident guesses — which is where wrong-but-plausible work comes from.
 
-More context is not free: too much dilutes attention, buries the signal in noise,
-and costs tokens — curating it is real work. But the **asymmetry** is the point.
-*Too little* context is reliably, predictably bad: a capable model reasoning
-without the deciding information still produces wrong work, because its ceiling is
-set by what's in front of it and no amount of raw capability rescues you below that
-floor. "More context, carefully chosen" has trade-offs; "missing the context that
-decides the answer" has none — it just loses.
+The asymmetry is the point. More context has trade-offs (noise, diluted attention,
+tokens); *missing the context that decides the answer* has none — it just loses. A
+capable model reasoning without the deciding information still produces wrong work;
+its ceiling is set by what it can see.
 
-This asymmetry is why PCR has two halves, not one. Because *too little* is bad, you
-**accumulate** the judgment that would otherwise evaporate. Because *too much or
-stale* is also bad, you **distill** — pruning noise, keeping the current truth
-fresh. PCR aims at the sweet spot: the high-value, least-recoverable context,
-present and trustworthy, with nothing rotting around it.
+This is why PCR has two halves: **accumulate** the judgment that would otherwise
+evaporate (too little is reliably bad), and **distill** it — pruning noise, keeping
+the current truth fresh (too much or stale is bad too).
 
 ---
 
