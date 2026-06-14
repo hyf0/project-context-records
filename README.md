@@ -224,8 +224,7 @@ add more only if real use proves you need it.
 
 - **One topic per file.** Cross-link related entries with standard relative
   Markdown links (`[other-topic](./other-topic.md)`) — clickable on GitHub,
-  unambiguous, and tool-agnostic. A ledger of many related entries in one file
-  is fine too.
+  unambiguous, and tool-agnostic.
 - **Keep the current truth fresh.** Drift is the death risk: a confident record
   that no longer matches reality flips from asset to **trap** — an agent will act
   on it with full confidence. A stale record is worse than no record. When your
