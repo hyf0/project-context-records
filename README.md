@@ -33,13 +33,14 @@ When working here:
 - **Read first.** If a record covers the area you're touching, read it before acting.
 - **Record as you go.** Proactively write down context worth keeping — and whenever
   a human asks you to. No required format, no fixed list of what qualifies: if it's
-  true about this project but not visible in the code, it's worth a record.
+  true about this project, not visible in the code, and useful beyond the moment,
+  it's worth a record.
 - **Keep it fresh.** If your change affects a record, update it in the same change —
   a stale record is a trap, not an asset.
 - **Provenance.** An unstamped line is AI-accumulated: challenge and verify it freely.
-  A line stamped `[VOUCHED @handle]` was vouched for by a human — don't reopen or
-  re-verify it. Add a stamp only when a human explicitly tells you to; a human
-  reading past a line, or not objecting, is not a stamp.
+  A `[VOUCHED @handle]` stamp (on a line, or at the top of a file) means a human
+  vouched for it — don't reopen or re-verify it. Add it only on a human's explicit
+  instruction; reading past a line, or not objecting, is not a stamp.
 ```
 
 That block *is* the whole adoption. It routes every collaborator — human or agent —
@@ -88,7 +89,7 @@ the current truth fresh (too much or stale is bad too).
 ## Why code is no longer enough
 
 Code records the **result state**: what the system finally looks like. It
-structurally throws away three things a collaborator needs:
+structurally drops three things a collaborator needs:
 
 1. **The rejected paths.** The code shows "we chose A," never "we considered B
    and C; B was killed because X." So the next collaborator sees A, asks "why
@@ -129,9 +130,8 @@ what makes it hold — a call you make once keeps shaping the work session after
 session, instead of being re-argued each time.
 
 So PCR is also a **harness**: a way to hand the AI execution speed while a human
-keeps the wheel. In the AI era the scarce human act is no longer doing the work,
-or checking it line by line — it's setting and maintaining the direction the
-records encode.
+keeps the wheel. The scarce human act often shifts from doing the work, or checking
+it line by line, to setting and maintaining the direction the records encode.
 
 ---
 
@@ -159,16 +159,18 @@ PCR keeps ADR's best instinct — *knowledge lives in the repo, reviewed and
 versioned with the code, not in a wiki* — and grafts on three shoots for the new
 reader:
 
-1. **Decisions → context.** ADR records one-off choices. PCR records the whole
-   meta-layer: decisions *and* architecture, mental models, deliberate
-   divergences, gotchas, and in-flight plans. A one-time decision is a subset of
-   a project's context, not the whole of it.
+1. **Decisions → context.** ADR centers one significant decision per file, with
+   its context and consequences. PCR widens the unit to the whole meta-layer:
+   decisions *and* architecture, mental models, deliberate divergences, gotchas,
+   and in-flight plans. A decision is one slice of a project's context, not all of it.
 2. **Immutable-and-stacked → single-and-fresh.** ADR preserves history by
    freezing each decided file and appending a new one that supersedes it; the
    current truth ends up scattered across that supersede chain. PCR keeps the
    **current conclusion in one fresh place** and lets **git** hold the evolution.
    An amnesiac agent re-reading a supersede chain to find today's answer is pure
-   waste; give it one trustworthy answer and send history to the log.
+   waste; give it one trustworthy answer and send history to the log. Rationale
+   that still bears on the decision stays in the current entry; only the incidental
+   evolution goes to git.
 3. **Reader = human → reader = self-directed amnesiac agent.** ADR only
    describes, because a human reads the consequences and self-regulates. An agent
    will "discover" a settled thing and act on it. So a PCR entry may carry an
@@ -183,8 +185,8 @@ The **meta-layer** of a project: why it is shaped this way, the architecture,
 maintainer decisions, intent, deliberate divergences, mental models, hard-won
 gotchas, and plans currently in flight.
 
-Negative definition, often sharper: **anything that is true about the project but
-invisible in the code.**
+Negative definition, often sharper: **anything true about the project that the code
+can't tell you, and that stays useful beyond the moment.**
 
 Capture is **broad** — record anything valuable, cheaply, as you go. Value is
 filtered later by **distillation** (below), not at capture time. Ephemeral things
@@ -204,10 +206,12 @@ So the rule is a single bit:
 
 - **No stamp = AI-accumulated.** The default substrate. Treat it as
   challengeable — question it, and verify it freely.
-- **`[VOUCHED @handle]` = a human reviewed it and vouches.** Don't reopen it, don't
-  waste turns re-verifying it, treat it as foundation. The stamp is an explicit
-  act: a human adds it on purpose — a human reading past a claim, or simply not
-  objecting, never counts as one.
+- **`[VOUCHED @handle]` = a human vouched for it.** Treat it as foundation: don't
+  re-verify it, and don't reopen it for its own sake — reopen only on new evidence,
+  a changed constraint, or a human's say-so. A stamp marks a single line (at the end
+  of it) or a whole file (at the top), and represents explicit human vouching: typed
+  by a human, or added by an agent only on a human's explicit instruction. A human
+  reading past a claim, or not objecting, never counts.
 
 ```
 Timestamps are stored as UTC, converted only at the edges — settled after a DST bug.   [VOUCHED @hyf0]
@@ -215,10 +219,11 @@ Timestamps are stored as UTC, converted only at the edges — settled after a DS
 Raising the cache TTL to 1h is probably safe.   ← no stamp: AI-accumulated, verify freely
 ```
 
-**Human participation is optional — a quality booster, not a constitutive part.**
-The agent-accumulated substrate works on its own; the human seal *elevates*
-selected entries. You spend a human's scarce attention where the stakes justify
-it, and leave the rest as the honest default.
+**The human seal is optional — for continuity, not for control.** The
+agent-accumulated substrate already carries the memory: an agent inherits what was
+recorded, vouched or not. What the seal adds is the harness from [Keeping the
+wheel](#keeping-the-wheel) — the human direction that holds across sessions. So
+vouch where the stakes justify it, and leave the rest as the honest default.
 
 **Why a stamp, and only one kind.** The worst way an AI-maintained knowledge base
 fails is that the AI's own guesses get taken for facts a human has confirmed — a
@@ -233,14 +238,13 @@ add more only if real use proves you need it.
 ## Lifecycle: accumulate → distill
 
 - **Accumulate** (cheap, default, by agents): record context proactively while
-  working — and whenever a human asks — including ephemeral plans and in-flight
-  reasoning. Volume is fine; noise is expected.
+  working — and whenever a human asks — and keep existing records fresh as your
+  changes touch them. Volume is fine; noise is expected.
 - **Distill** (scarce, by humans): a review pass that **promotes** the valuable,
-  **prunes** the wrong and the stale, and **stamps** what the reviewer vouches
-  for. Distillation is how cheap accumulation becomes a durable, trustworthy
-  record — it is the human seal applied as a recurring practice, and it is where
-  "implementation plans tracked temporarily" become "the valuable thing that
-  remains."
+  **prunes** what's wrong or obsolete, and **vouches** for what holds — the part
+  agents can't do for themselves. This is the human seal applied as a recurring
+  practice, and where "implementation plans tracked temporarily" become "the
+  valuable thing that remains."
 
 ---
 
