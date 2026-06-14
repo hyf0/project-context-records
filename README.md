@@ -16,8 +16,19 @@ context — the part worth versioning, reviewing, and inheriting across sessions
 
 ## TL;DR: How to use
 
-Paste this block into your project's `AGENTS.md` / `CLAUDE.md` (point it at
-wherever you keep the records):
+**Recommended — install the setup skill once, globally:**
+
+```
+npx skills add https://github.com/hyf0/project-context-records/tree/main/skills/pcr-setup -g
+```
+
+Then run `/pcr-setup` in any project to adopt PCR there. The global install (`-g`)
+makes the command available across all your projects, and re-running it later
+updates a project to the latest block. (Skill installs are powered by
+[skills.sh](https://www.skills.sh).)
+
+**Or do it by hand** — paste this block into your project's `AGENTS.md` /
+`CLAUDE.md` (point it at wherever you keep the records):
 
 ```
 ## Project Context Records (PCR)

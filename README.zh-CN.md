@@ -14,7 +14,18 @@ PCR 是 **context engineering（上下文工程）** 的一种具体实践。Con
 
 ## TL;DR：如何使用
 
-把下面这段内容粘贴到你项目的 `AGENTS.md` / `CLAUDE.md` 中（并把路径改成你实际存放记录的目录）：
+**推荐——把 setup 技能装一次，装到全局：**
+
+```
+npx skills add https://github.com/hyf0/project-context-records/tree/main/skills/pcr-setup -g
+```
+
+然后在任意项目里运行 `/pcr-setup`，就能在那个项目采纳 PCR。装到全局（`-g`）让这个命令在你所有项目里
+都可用；以后重新运行它，还会把项目里的 block 更新到最新版。（技能安装由 [skills.sh](https://www.skills.sh)
+提供。）
+
+**或者手动来**——把下面这段内容粘贴到你项目的 `AGENTS.md` / `CLAUDE.md` 中（并把路径改成你实际存放记录
+的目录）：
 
 ```
 ## Project Context Records (PCR)
