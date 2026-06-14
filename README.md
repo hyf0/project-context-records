@@ -9,6 +9,39 @@ PCR is a practice of **context engineering**. Context engineering curates what
 goes into a model's context; PCR is the project-scoped, persisted slice of that
 context — the part worth versioning, reviewing, and inheriting across sessions.
 
+## TL;DR: How to use
+
+Paste this block into your project's `AGENTS.md` / `CLAUDE.md` (point it at
+wherever you keep the records):
+
+```markdown
+## Project Context Records (PCR)
+
+This project keeps its durable design context as **Project Context Records** —
+methodology: https://github.com/hyf0/project-context-records. Records live in
+`.agents/docs/`, one concept per file, cross-linked with `[[wiki-links]]`.
+
+When working here:
+- **Read first.** If a record covers the area you're touching, read it before acting.
+- **Keep it fresh.** If your change affects a record, update it in the same change —
+  a stale record is a trap, not an asset.
+- **Provenance.** An unstamped line is AI-accumulated: challenge and verify it freely.
+  A line stamped `[✓ @handle]` was vouched for by a human — don't reopen or
+  re-verify it. Only a human adds a stamp.
+```
+
+That block *is* the whole adoption. It routes every collaborator — human or agent —
+to the records and states the rules they must follow. It is deliberately thin: an
+agent automatically reads `AGENTS.md` every session but does **not** fetch URLs, so
+only what must be obeyed every session is inlined; the rest stays one link away and
+never needs fetching for the agent to behave.
+
+Then just work: **accumulate** records freely as you go, and **distill** them —
+promoting the valuable, pruning the stale, stamping what a human vouches for —
+whenever a human reviews.
+
+**Everything below is the *why*.**
+
 ## Contents
 
 - [Why code is no longer enough](#why-code-is-no-longer-enough)
@@ -18,7 +51,6 @@ context — the part worth versioning, reviewing, and inheriting across sessions
 - [The mechanism: the provenance stamp](#the-mechanism-the-provenance-stamp)
 - [Lifecycle: accumulate → distill](#lifecycle-accumulate--distill)
 - [Writing conventions](#writing-conventions)
-- [How to use](#how-to-use)
 - [Deliberately deferred](#deliberately-deferred)
 
 ---
@@ -171,39 +203,6 @@ let real use pull more, if it ever does. Don't pre-fill the cabinet.
   rejected, the known pitfalls. Lead with the principle or intuition.
 - **Write so a collaborator gets it without reading the code internals.** The
   entry stands on its own as prose; an agent reads it and *gets it*.
-
----
-
-## How to use
-
-Adopt PCR by pasting this block into your project's `AGENTS.md` / `CLAUDE.md`
-(change `.agents/docs/` to wherever you keep the records):
-
-```markdown
-## Project Context Records (PCR)
-
-This project keeps its durable design context as **Project Context Records** —
-methodology: https://github.com/hyf0/project-context-records. Records live in
-`.agents/docs/`, one concept per file, cross-linked with `[[wiki-links]]`.
-
-When working here:
-- **Read first.** If a record covers the area you're touching, read it before acting.
-- **Keep it fresh.** If your change affects a record, update it in the same change —
-  a stale record is a trap, not an asset.
-- **Provenance.** An unstamped line is AI-accumulated: challenge and verify it freely.
-  A line stamped `[✓ @handle]` was vouched for by a human — don't reopen or
-  re-verify it. Only a human adds a stamp.
-```
-
-That block *is* the whole adoption. It routes every collaborator — human or agent —
-to the records and states the rules they must follow. It is deliberately thin: an
-agent automatically reads `AGENTS.md` every session but does **not** fetch URLs, so
-only what must be obeyed every session is inlined; the full *why* stays one link
-away, here in this repo, and never needs fetching for the agent to behave.
-
-Then just work: **accumulate** records freely as you go, and **distill** them —
-promoting the valuable, pruning the stale, stamping what a human vouches for —
-whenever a human reviews.
 
 ---
 
