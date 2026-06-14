@@ -17,7 +17,7 @@ PCR 是 **context engineering（上下文工程）** 的一种具体实践。Con
 **推荐——把 setup 技能装一次，装到全局：**
 
 ```
-npx skills add https://github.com/hyf0/project-context-records/tree/main/skills/pcr-setup -g
+npx skills add hyf0/project-context-records -g
 ```
 
 然后在任意项目里运行 `/pcr-setup`，就能在那个项目采纳 PCR。装到全局（`-g`）让这个命令在你所有项目里

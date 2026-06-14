@@ -19,7 +19,7 @@ context — the part worth versioning, reviewing, and inheriting across sessions
 **Recommended — install the setup skill once, globally:**
 
 ```
-npx skills add https://github.com/hyf0/project-context-records/tree/main/skills/pcr-setup -g
+npx skills add hyf0/project-context-records -g
 ```
 
 Then run `/pcr-setup` in any project to adopt PCR there. The global install (`-g`)
