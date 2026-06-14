@@ -39,7 +39,8 @@ When working here:
   a stale record is a trap, not an asset.
 - **Provenance.** An unstamped line is AI-accumulated: challenge and verify it freely.
   A `[VOUCHED @handle]` stamp (on a line, or at the top of a file) means a human
-  vouched for it — don't reopen or re-verify it. Add it only on a human's explicit
+  vouched for it — treat it as settled; reopen or re-verify only on new evidence, a
+  changed constraint, or a human's say-so. Add a stamp only on a human's explicit
   instruction; reading past a line, or not objecting, is not a stamp.
 ```
 
@@ -125,9 +126,9 @@ the work quietly drifts from what you wanted.
 PCR is a way out. A human sets direction at a few durable points — the records
 they vouch for — and the AI runs fast within those rails. Control moves from
 reviewing every action, which doesn't scale, to owning the direction, which does.
-The vouched stamp is the steering input; **"don't reopen a vouched record"** is
-what makes it hold — a call you make once keeps shaping the work session after
-session, instead of being re-argued each time.
+The vouched stamp is the steering input: a vouched call isn't re-opened each
+session without a real reason, so a decision you make once keeps shaping the work,
+session after session, instead of being re-argued every time.
 
 So PCR is also a **harness**: a way to hand the AI execution speed while a human
 keeps the wheel. The scarce human act often shifts from doing the work, or checking
@@ -188,10 +189,10 @@ gotchas, and plans currently in flight.
 Negative definition, often sharper: **anything true about the project that the code
 can't tell you, and that stays useful beyond the moment.**
 
-Capture is **broad** — record anything valuable, cheaply, as you go. Value is
-filtered later by **distillation** (below), not at capture time. Ephemeral things
-(an implementation plan, in-flight reasoning) may be tracked temporarily; what
-survives distillation is the valuable residue.
+Capture is **broad** — record anything plausibly useful, cheaply, as you go,
+ephemeral plans and in-flight reasoning included. Value is judged later, at
+**distillation** (below), not at capture time: what survives is the residue still
+useful beyond the moment.
 
 ---
 
@@ -207,8 +208,8 @@ So the rule is a single bit:
 - **No stamp = AI-accumulated.** The default substrate. Treat it as
   challengeable — question it, and verify it freely.
 - **`[VOUCHED @handle]` = a human vouched for it.** Treat it as foundation: don't
-  re-verify it, and don't reopen it for its own sake — reopen only on new evidence,
-  a changed constraint, or a human's say-so. A stamp marks a single line (at the end
+  re-verify or reopen it for its own sake — do either only on new evidence, a
+  changed constraint, or a human's say-so. A stamp marks a single line (at the end
   of it) or a whole file (at the top), and represents explicit human vouching: typed
   by a human, or added by an agent only on a human's explicit instruction. A human
   reading past a claim, or not objecting, never counts.
