@@ -1,6 +1,6 @@
 ---
 name: pcr-setup
-description: Set up Project Context Records (PCR) in the current project — put the PCR adoption block into the project's AGENTS.md (with a CLAUDE.md symlink) and create the records folder, idempotently. Use when the user runs /pcr-setup, or asks to set up, adopt, install, or add PCR / Project Context Records to a project. Do NOT use for writing or editing individual records, or for changing the methodology doc itself.
+description: Set up Project Context Records (PCR) in the current project — put the PCR adoption block into the project's AGENTS.md and create the records folder, idempotently. Use when the user runs /pcr-setup, or asks to set up, adopt, install, or add PCR / Project Context Records to a project. Do NOT use for writing or editing individual records, or for changing the methodology doc itself.
 ---
 
 # pcr-setup
@@ -19,15 +19,19 @@ script needed.
   if missing). If the user named a different folder, use that.
 - [ ] 3. Choose the agent-instructions file:
   - `AGENTS.md` exists → use it.
-  - else a *real* `CLAUDE.md` exists (not a symlink) → use it (respect the
-    project's existing setup).
-  - else → create `AGENTS.md` and symlink `CLAUDE.md` → `AGENTS.md`.
-- [ ] 4. **Idempotency:** if the chosen file already contains the line
-  `## Project Context Records (PCR)`, stop — PCR is already set up. Tell the user
-  and change nothing.
-- [ ] 5. Otherwise append the block below **verbatim** (one blank line before it if
-  the file is non-empty). If a non-default records folder was used, replace
-  `.agents/docs/` in the block with it.
+  - else `CLAUDE.md` exists → use it (respect the project's existing setup).
+  - else → create `AGENTS.md`.
+- [ ] 4. Look for an existing PCR block — a `## Project Context Records (PCR)`
+  heading through the end of its **Provenance** bullet — and compare it to the
+  canonical block below:
+  - **Not present** → append the canonical block (one blank line before it if the
+    file is non-empty).
+  - **Present and identical** → nothing to do; tell the user PCR is already up to date.
+  - **Present but different** (an older version) → replace the existing block in
+    place with the canonical block. Re-running the skill this way is how a project
+    gets updated to the latest block.
+- [ ] 5. If a non-default records folder is used, replace `.agents/docs/` in the
+  block with it.
 - [ ] 6. Tell the user in one or two lines what changed, and that they can now keep
   records under the folder and vouch a line or a whole file with
   `[VOUCHED @<their-handle>]` — a stamp counts only when a human adds it explicitly.
