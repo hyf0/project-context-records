@@ -9,6 +9,18 @@ PCR is a practice of **context engineering**. Context engineering curates what
 goes into a model's context; PCR is the project-scoped, persisted slice of that
 context — the part worth versioning, reviewing, and inheriting across sessions.
 
+## Contents
+
+- [Why code is no longer enough](#why-code-is-no-longer-enough)
+- [Where it sits](#where-it-sits)
+- [Old tree, new shoots](#old-tree-new-shoots)
+- [What goes in](#what-goes-in)
+- [The mechanism: the provenance stamp](#the-mechanism-the-provenance-stamp)
+- [Lifecycle: accumulate → distill](#lifecycle-accumulate--distill)
+- [Writing conventions](#writing-conventions)
+- [Adopting PCR](#adopting-pcr)
+- [Deliberately deferred](#deliberately-deferred)
+
 ---
 
 ## Why code is no longer enough
