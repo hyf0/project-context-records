@@ -18,7 +18,7 @@ context — the part worth versioning, reviewing, and inheriting across sessions
 - [The mechanism: the provenance stamp](#the-mechanism-the-provenance-stamp)
 - [Lifecycle: accumulate → distill](#lifecycle-accumulate--distill)
 - [Writing conventions](#writing-conventions)
-- [Adopting PCR](#adopting-pcr)
+- [How to use](#how-to-use)
 - [Deliberately deferred](#deliberately-deferred)
 
 ---
@@ -126,9 +126,9 @@ So the rule is a single bit:
   waste turns re-verifying it, treat it as foundation.
 
 ```
-We make rawMode 'always' the default; 'auto' is the escape hatch.   [✓ @hyf0]
+Timestamps are stored as UTC, converted only at the edges — settled after a DST bug.   [✓ @hyf0]
 
-Box flex should reset to null in case X.   ← no stamp: AI-accumulated, challengeable
+Raising the cache TTL to 1h is probably safe.   ← no stamp: AI-accumulated, verify freely
 ```
 
 **Human participation is optional — a quality booster, not a constitutive part.**
@@ -174,12 +174,36 @@ let real use pull more, if it ever does. Don't pre-fill the cabinet.
 
 ---
 
-## Adopting PCR
+## How to use
 
-1. Pick a versioned folder for the records (e.g. `.agents/docs/`).
-2. Drop a one-line pointer in `AGENTS.md` / `CLAUDE.md` to this methodology and
-   to that folder, so every collaborator (human or agent) is routed to it.
-3. Accumulate freely. Distill — and stamp — when a human is in the loop.
+Adopt PCR by pasting this block into your project's `AGENTS.md` / `CLAUDE.md`
+(change `.agents/docs/` to wherever you keep the records):
+
+```markdown
+## Project Context Records (PCR)
+
+This project keeps its durable design context as **Project Context Records** —
+methodology: https://github.com/hyf0/project-context-records. Records live in
+`.agents/docs/`, one concept per file, cross-linked with `[[wiki-links]]`.
+
+When working here:
+- **Read first.** If a record covers the area you're touching, read it before acting.
+- **Keep it fresh.** If your change affects a record, update it in the same change —
+  a stale record is a trap, not an asset.
+- **Provenance.** An unstamped line is AI-accumulated: challenge and verify it freely.
+  A line stamped `[✓ @handle]` was vouched for by a human — don't reopen or
+  re-verify it. Only a human adds a stamp.
+```
+
+That block *is* the whole adoption. It routes every collaborator — human or agent —
+to the records and states the rules they must follow. It is deliberately thin: an
+agent automatically reads `AGENTS.md` every session but does **not** fetch URLs, so
+only what must be obeyed every session is inlined; the full *why* stays one link
+away, here in this repo, and never needs fetching for the agent to behave.
+
+Then just work: **accumulate** records freely as you go, and **distill** them —
+promoting the valuable, pruning the stale, stamping what a human vouches for —
+whenever a human reviews.
 
 ---
 
