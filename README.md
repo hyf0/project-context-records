@@ -6,6 +6,9 @@
 > project's **meta-context** — the *why*, the architecture, the maintainer
 > decisions, the intent — so that an amnesiac, self-directed AI collaborator
 > inherits the project's judgment instead of re-deriving it.
+>
+> It is also a harness: a way for a human to keep hold of the direction while the
+> AI iterates fast.
 
 PCR is a practice of **context engineering**. Context engineering curates what
 goes into a model's context; PCR is the project-scoped, persisted slice of that
@@ -55,6 +58,7 @@ whenever a human reviews.
 
 - [The premise: output is bounded by context](#the-premise-output-is-bounded-by-context)
 - [Why code is no longer enough](#why-code-is-no-longer-enough)
+- [Keeping the wheel](#keeping-the-wheel)
 - [Where it sits](#where-it-sits)
 - [Old tree, new shoots](#old-tree-new-shoots)
 - [What goes in](#what-goes-in)
@@ -108,6 +112,26 @@ into an **explicit artifact** — or it re-evaporates, once per session, forever
 
 PCR is that artifact. What it preserves is not *what the code is*, but *how the
 judgment was reached* — so that thinking already paid for is not paid for again.
+
+---
+
+## Keeping the wheel
+
+AI can iterate faster than any human can review. That forces a dilemma: review
+every step and you become the bottleneck, erasing the speed; review nothing and
+the work quietly drifts from what you wanted.
+
+PCR is a way out. A human sets direction at a few durable points — the records
+they vouch for — and the AI runs fast within those rails. Control moves from
+reviewing every action, which doesn't scale, to owning the direction, which does.
+The vouched stamp is the steering input; **"don't reopen a vouched record"** is
+what makes it hold — a call you make once keeps shaping the work session after
+session, instead of being re-argued each time.
+
+So PCR is also a **harness**: a way to hand the AI execution speed while a human
+keeps the wheel. In the AI era the scarce human act is no longer doing the work,
+or checking it line by line — it's setting and maintaining the direction the
+records encode.
 
 ---
 
