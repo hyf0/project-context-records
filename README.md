@@ -25,7 +25,7 @@ project's durable design context — the *why*, the decisions, the architecture 
 so you inherit it instead of re-deriving or re-litigating what's already settled.
 
 When working here:
-- **Where they live.** Records are in `.agents/docs/` — one concept per file,
+- **Where they live.** Records are in `.agents/docs/` — one topic per file,
   cross-linked with relative Markdown links (`[name](./name.md)`).
 - **Read first.** If a record covers the area you're touching, read it before acting.
 - **Record as you go.** Proactively write down context worth keeping — and whenever
@@ -222,9 +222,10 @@ add more only if real use proves you need it.
 
 ## Writing conventions
 
-- **One concept per file.** Cross-link related entries with standard relative
-  Markdown links (`[other-concept](./other-concept.md)`) — clickable on GitHub,
-  unambiguous, and tool-agnostic.
+- **One topic per file.** Cross-link related entries with standard relative
+  Markdown links (`[other-topic](./other-topic.md)`) — clickable on GitHub,
+  unambiguous, and tool-agnostic. A ledger of many related entries in one file
+  is fine too.
 - **Keep the current truth fresh.** Drift is the death risk: a confident record
   that no longer matches reality flips from asset to **trap** — an agent will act
   on it with full confidence. A stale record is worse than no record. When your
