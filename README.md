@@ -190,12 +190,13 @@ The agent-accumulated substrate works on its own; the human seal *elevates*
 selected entries. You spend a human's scarce attention where the stakes justify
 it, and leave the rest as the honest default.
 
-**Why one bit, and only one.** The deepest failure mode of an AI knowledge base
-is AI-accumulated claims **masquerading as human-blessed law** — a later agent
-treating the machine's own guess as settled doctrine. One bit fixes exactly that.
-Everything else — *is this a decision or an observation? settled or provisional?*
-— goes in the **prose of the entry**, not into more stamps. Start with one bit;
-let real use pull more, if it ever does. Don't pre-fill the cabinet.
+**Why a stamp, and only one kind.** The worst way an AI-maintained knowledge base
+fails is that the AI's own guesses get taken for facts a human has confirmed — a
+later agent treats a machine-made assumption as settled and builds on it. The stamp
+draws exactly that line, and only that line: **vouched for by a human, or not.**
+Finer distinctions — *decision or observation? settled or still tentative?* —
+belong in the entry's own text, not in more kinds of stamp. Start with this one;
+add more only if real use proves you need it.
 
 ---
 
