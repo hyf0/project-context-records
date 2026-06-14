@@ -1,5 +1,7 @@
 # Project Context Records (PCR)
 
+**English** · [简体中文](./README.zh-CN.md)
+
 > A methodology for the AI era: keep a durable, repo-versioned archive of a
 > project's **meta-context** — the *why*, the architecture, the maintainer
 > decisions, the intent — so that an amnesiac, self-directed AI collaborator
@@ -17,12 +19,14 @@ wherever you keep the records):
 ```markdown
 ## Project Context Records (PCR)
 
-This project keeps its durable design context as **Project Context Records** —
-methodology: https://github.com/hyf0/project-context-records. Records live in
-`.agents/docs/`, one concept per file, cross-linked with relative Markdown links
-(`[name](./name.md)`).
+This project follows **Project Context Records (PCR)** —
+methodology: https://github.com/hyf0/project-context-records. PCR keeps the
+project's durable design context — the *why*, the decisions, the architecture —
+so you inherit it instead of re-deriving or re-litigating what's already settled.
 
 When working here:
+- **Where they live.** Records are in `.agents/docs/` — one concept per file,
+  cross-linked with relative Markdown links (`[name](./name.md)`).
 - **Read first.** If a record covers the area you're touching, read it before acting.
 - **Keep it fresh.** If your change affects a record, update it in the same change —
   a stale record is a trap, not an asset.
