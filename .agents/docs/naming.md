@@ -1,5 +1,7 @@
 # Naming: why "Project Context Records", not "Agent Context Records"
 
+[VOUCHED @hyf0]
+
 The records are the **project's** shared memory, not any one agent's. "Project"
 says that; "Agent" would have said the wrong thing.
 
