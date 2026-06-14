@@ -62,7 +62,7 @@ whenever a human reviews.
 - [Why code is no longer enough](#why-code-is-no-longer-enough)
 - [Keeping the wheel](#keeping-the-wheel)
 - [Where it sits](#where-it-sits)
-- [Old tree, new shoots](#old-tree-new-shoots)
+- [Building on ADR](#building-on-adr)
 - [What goes in](#what-goes-in)
 - [The mechanism: the provenance stamp](#the-mechanism-the-provenance-stamp)
 - [Lifecycle: accumulate → distill](#lifecycle-accumulate--distill)
@@ -146,7 +146,7 @@ Guiding philosophy   Context Engineering   — curate what's in the model's cont
 
 ---
 
-## Old tree, new shoots
+## Building on ADR
 
 PCR is the AI-era descendant of **Architecture Decision Records (ADR)** — a
 convention introduced by Michael Nygard in 2011 and since grown into an
@@ -157,7 +157,7 @@ change it, you write a new one that **supersedes** it, leaving an append-only
 trail.
 
 PCR keeps ADR's best instinct — *knowledge lives in the repo, reviewed and
-versioned with the code, not in a wiki* — and grafts on three shoots for the new
+versioned with the code, not in a wiki* — and adapts it in three ways for the new
 reader:
 
 1. **Decisions → context.** ADR centers one significant decision per file, with
